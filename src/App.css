@@ -242,6 +242,13 @@ button {
   margin: auto;
 }
 
+.footer {
+  text-align: center;
+  display: block;
+  color: dimgrey;
+  margin-top: 0.5em;
+}
+
 /* max-width  */
 @media screen and (max-width: 600px) {
   .App {
@@ -260,6 +267,9 @@ button {
   }
   .bandeiras {
     width: 5vh;
+  }
+  .footer {
+    font-size: 0.8em;
   }
 }
 
@@ -281,6 +291,9 @@ button {
   }
   .bandeiras {
     width: 10vh;
+  }
+  .footer {
+    font-size: 0.4em;
   }
 }
 

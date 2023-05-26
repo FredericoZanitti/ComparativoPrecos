@@ -135,6 +135,7 @@ export default function ProporcaoRealEuro() {
         />
       </div>
       <div className="cotacao" id="cotacao"></div>
+      <div className="footer">Copyright © 2023 Frederico Zanitti Silva</div>
     </div>
   );
 }
