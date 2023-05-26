@@ -101,7 +101,7 @@ export default function ProporcaoRealEuro() {
         </div>
 
         <div className="lado-direito">
-          <label htmlFor="minreal">Salário Mínimo BR: </label>
+          <label htmlFor="minreal">Sal.Mínimo BR: </label>
           <input
             type="text"
             name="minreal"
@@ -110,7 +110,7 @@ export default function ProporcaoRealEuro() {
             className="input-esquerda"
           />
 
-          <label htmlFor="mineuro">Salário Mínimo PT: </label>
+          <label htmlFor="mineuro">Sal.Mínimo PT: </label>
           <input
             type="text"
             name="mineuro"
@@ -120,7 +120,7 @@ export default function ProporcaoRealEuro() {
           />
         </div>
 
-        <button type="submit" name="submit" className="botao">
+        <button type="submit" name="submit">
           Calcular
         </button>
       </form>

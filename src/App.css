@@ -1,6 +1,68 @@
+.App {
+  font-family: "Source Code Pro", monospace;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:700,800);
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+}
+:focus {
+  outline: none;
+}
+::-webkit-input-placeholder {
+  color: #dedfdf;
+}
+::-moz-placeholder {
+  color: #dedfdf;
+}
+:-moz-placeholder {
+  color: #dedfdf;
+}
+::-ms-input-placeholder {
+  color: #dedfdf;
+}
+body {
+  background-color: #6ed0f6;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5;
+}
+
+form {
+  font-size: 24px;
+  width: 40vh;
+  margin: 0px auto;
+}
+input[type="radio"] {
+  display: none;
+}
+label {
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 5px 5px;
+  float: left;
+  opacity: 0.5;
+  transition: all 0.4s;
+}
+input[type="radio"]:checked + label {
+  opacity: 1;
+  transition: all 0.4s;
+}
+label[for="reset"] {
+  float: right;
+}
+label:hover {
+  opacity: 1;
+  transition: all 0.4s;
+}
+
 .formulario {
   margin: 2em auto;
-  width: 50%;
+  width: 80%;
   background-color: whitesmoke;
   padding: 1em;
   border-radius: 1em;
@@ -9,6 +71,7 @@
 .form-control {
   margin: auto;
   background-color: whitesmoke;
+  width: 100%;
 }
 
 .form-control label {
@@ -28,11 +91,11 @@
   box-shadow: none;
   border: 1px solid #ced6e0;
   transition: all 0.3s ease-in-out;
-  font-size: 18px;
   padding: 5px 15px;
   background: none;
   color: #1a3b5d;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.6em;
 }
 
 .input-esquerda {
@@ -42,11 +105,11 @@
   box-shadow: none;
   border: 1px solid #ced6e0;
   transition: all 0.3s ease-in-out;
-  font-size: 18px;
   padding: 10px 15px;
   background: none;
   color: #1a3b5d;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.6em;
 }
 
 .input-direita {
@@ -56,11 +119,11 @@
   box-shadow: none;
   border: 1px solid #ced6e0;
   transition: all 0.3s ease-in-out;
-  font-size: 18px;
   padding: 5px 15px;
   background: none;
   color: #1a3b5d;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.6em;
 }
 
 .form-control input:hover {
@@ -106,59 +169,49 @@ button {
   background-color: gainsboro;
   color: black;
   display: block;
-  width: 20%;
   border: 1px solid #222;
   border-radius: 5px;
-  padding: 1em;
+  padding: 0.7em;
+  width: 20vh;
   cursor: pointer;
+}
+
+.vantagens-geral {
+  margin: 0;
+  height: 18vh;
 }
 
 .vantagem,
 .produto,
-.percent1,
-.percent2 {
-  font-size: 18px;
-  background: none;
-  color: white;
-  margin: 1em auto;
-  font-family: "Source Sans Pro", sans-serif;
+.percent {
+  color: black;
+  padding: 0;
+  margin: 0;
 }
 
-.percent1 {
-  font-size: 1.4rem;
+.vantagem {
   font-weight: bold;
-}
-
-.vantagemPrincipal {
-  font-weight: bold;
-  font-size: 22px;
+  margin-top: 1em;
 }
 
 .resposta {
-  background-color: grey;
-  padding: 0.1em 5em 0.4em;
-  height: 200px;
+  background-color: aliceblue;
+  padding: 0.1em 1em 0.4em;
+  height: 50%;
+  font-size: 1.3em;
+  border-radius: 0.3em;
 }
 
 #cotacao {
   background-color: white;
+  color: gray;
   padding: 1em;
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 0.7em;
   margin-top: 10px;
   text-align: center;
+  border-radius: 0.3em;
 }
-
-.pageTitle {
-  font-size: 24px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  text-align: center;
-  font-weight: bold;
-  color: brown;
-  padding: 0.8em;
-  margin: auto;
-}
-
 .lado-esquerdo {
   float: left;
   width: 50%;
@@ -175,8 +228,67 @@ button {
 }
 
 .bandeiras {
-  width: 15%;
   float: right;
-  margin: 0;
+  display: flex;
+  margin: 0.4em;
   padding: 0;
+}
+
+.pageTitle {
+  text-align: center;
+  font-weight: bold;
+  color: brown;
+  padding: 0.4em;
+  margin: auto;
+}
+
+/* max-width  */
+@media screen and (max-width: 600px) {
+  .App {
+    font-size: 1dvh;
+  }
+  .pageTitle {
+    font-size: 16px;
+  }
+  #cotacao {
+    font-size: 1em;
+  }
+  .vantagem,
+  .produto,
+  .percent {
+    font-size: 1em;
+  }
+  .bandeiras {
+    width: 5vh;
+  }
+}
+
+/* min-width */
+@media screen and (min-width: 900px) {
+  .App {
+    font-size: 3dvh;
+  }
+  .pageTitle {
+    font-size: 20px;
+  }
+  #cotacao {
+    font-size: 0.6em;
+  }
+  .vantagem,
+  .produto,
+  .percent {
+    font-size: 0.6em;
+  }
+  .bandeiras {
+    width: 10vh;
+  }
+}
+
+.mais-vantajoso {
+  color: olivedrab;
+  font-weight: bold;
+}
+
+.menos-vantajoso {
+  color: sienna;
 }

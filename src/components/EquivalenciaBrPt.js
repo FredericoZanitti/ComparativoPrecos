@@ -25,23 +25,31 @@ const EquivalenciaBrPt = ({ pr, vr, ve, mr, me }) => {
       bandVantagem = "";
     }
 
-    perbr = `Necessita de ${perSMBr.toFixed(
-      2
-    )}% do salário mínimo brasileiro para adquirí-lo`;
-    perpt = `Necessita de ${perSMPt.toFixed(
-      2
-    )}% do salário mínimo português para adquirí-lo`;
+    perbr = `Representa ${perSMBr.toFixed(2)}% do salário mínimo brasileiro`;
+    perpt = `Representa ${perSMPt.toFixed(2)}% do salário mínimo português`;
   } else vantagem = "";
 
   return (
-    <>
-      <p className="vantagem vantagemPrincipal">
+    <div className="vantagens-geral">
+      <p className="vantagem">
         {vantagem} {<img src={bandVantagem} className="bandeiras" />}
       </p>
       <p className="produto">{pr}</p>
-      <p className="percent">{perbr}</p>
-      <p className="percent">{perpt}</p>
-    </>
+      <p
+        className={`percent ${
+          bandVantagem === bandBrasil ? "mais-vantajoso" : "menos-vantajoso"
+        }`}
+      >
+        {perbr}
+      </p>
+      <p
+        className={`percent ${
+          bandVantagem === bandPortugal ? "mais-vantajoso" : "menos-vantajoso"
+        }`}
+      >
+        {perpt}
+      </p>
+    </div>
   );
 };
 
