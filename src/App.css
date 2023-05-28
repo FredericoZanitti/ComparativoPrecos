@@ -42,7 +42,6 @@ input[type="radio"] {
 }
 label {
   padding: 5px 10px;
-  cursor: pointer;
   margin: 5px 5px;
   float: left;
   opacity: 0.5;
@@ -61,7 +60,7 @@ label:hover {
 }
 
 .formulario {
-  margin: 2em auto;
+  margin: auto;
   width: 80%;
   background-color: whitesmoke;
   padding: 1em;
@@ -128,6 +127,8 @@ label:hover {
 
 .form-control input:hover {
   border-color: #3d9cff;
+  opacity: 1;
+  transition: all 0.4s;
 }
 
 .form-control input:focus {
@@ -234,14 +235,6 @@ button {
   padding: 0;
 }
 
-.pageTitle {
-  text-align: center;
-  font-weight: bold;
-  color: brown;
-  padding: 0.4em;
-  margin: auto;
-}
-
 .footer {
   text-align: center;
   display: block;
@@ -271,6 +264,9 @@ button {
   .footer {
     font-size: 0.8em;
   }
+  .cabecalho {
+    font-size: 2em;
+  }
 }
 
 /* min-width */
@@ -295,6 +291,9 @@ button {
   .footer {
     font-size: 0.4em;
   }
+  .cabecalho {
+    font-size: 1em;
+  }
 }
 
 .mais-vantajoso {
@@ -304,4 +303,19 @@ button {
 
 .menos-vantajoso {
   color: sienna;
+}
+
+.cabecalho {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  background: #fff;
+
+  width: 100%;
+  top: 0;
+
+  text-align: center;
+  font-weight: bold;
+  color: #6ed0f6;
+  padding: 0.6em;
+  margin-top: 0.6em;
+  margin-bottom: 1em;
 }

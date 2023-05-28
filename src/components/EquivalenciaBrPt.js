@@ -25,8 +25,14 @@ const EquivalenciaBrPt = ({ pr, vr, ve, mr, me }) => {
       bandVantagem = "";
     }
 
-    perbr = `Representa ${perSMBr.toFixed(2)}% do salário mínimo brasileiro`;
-    perpt = `Representa ${perSMPt.toFixed(2)}% do salário mínimo português`;
+    perbr = `Representa ${perSMBr.toLocaleString("pt-br", {
+      style: "decimal",
+      maximumFractionDigits: 2,
+    })}% do salário mínimo brasileiro`;
+    perpt = `Representa ${perSMPt.toLocaleString("pt-br", {
+      style: "decimal",
+      maximumFractionDigits: 2,
+    })}% do salário mínimo português`;
   } else vantagem = "";
 
   return (

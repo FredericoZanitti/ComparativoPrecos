@@ -12,7 +12,7 @@ export default function ProporcaoRealEuro() {
 
   const buscarCotacao = async () => {
     await axios
-      .get(`http://economia.awesomeapi.com.br/json/last/EUR-BRL`)
+      .get(`https://economia.awesomeapi.com.br/last/EUR-BRL`)
       .then((response) => {
         setCotacao(response.data);
       });
@@ -73,9 +73,6 @@ export default function ProporcaoRealEuro() {
 
   return (
     <div className="formulario">
-      <p className="pageTitle">
-        Comparativo de preços para aquisição de produtos em € ou R$
-      </p>
       <form onSubmit={handleSubmit} className="form-control">
         <div className="produto-centro">
           <label htmlFor="produto">Produto</label>
@@ -85,7 +82,7 @@ export default function ProporcaoRealEuro() {
         <div className="lado-esquerdo">
           <label htmlFor="valorreal">Valor R$: </label>
           <input
-            type="text"
+            type="currency"
             name="valorreal"
             required
             className="input-esquerda"
@@ -93,7 +90,7 @@ export default function ProporcaoRealEuro() {
 
           <label htmlFor="valoreuro">Valor €: </label>
           <input
-            type="text"
+            type="currency"
             name="valoreuro"
             required
             className="input-direita"
@@ -103,7 +100,7 @@ export default function ProporcaoRealEuro() {
         <div className="lado-direito">
           <label htmlFor="minreal">Sal.Mínimo BR: </label>
           <input
-            type="text"
+            type="currency"
             name="minreal"
             value={salMinimoBR}
             onChange={handleChange}
@@ -112,7 +109,7 @@ export default function ProporcaoRealEuro() {
 
           <label htmlFor="mineuro">Sal.Mínimo PT: </label>
           <input
-            type="text"
+            type="currency"
             name="mineuro"
             value={salMinimoPT}
             onChange={handleChange}
