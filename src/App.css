@@ -37,20 +37,13 @@ form {
   width: 40vh;
   margin: 0px auto;
 }
-input[type="radio"] {
-  display: none;
-}
+
 label {
-  padding: 5px 10px;
-  margin: 5px 5px;
   float: left;
   opacity: 0.5;
   transition: all 0.4s;
 }
-input[type="radio"]:checked + label {
-  opacity: 1;
-  transition: all 0.4s;
-}
+
 label[for="reset"] {
   float: right;
 }
@@ -61,26 +54,40 @@ label:hover {
 
 .formulario {
   margin: auto;
+  margin-top: 0;
   width: 80%;
   background-color: whitesmoke;
   padding: 1em;
   border-radius: 1em;
 }
 
+/* formulário principal */
 .form-control {
   margin: auto;
+  padding: 0.5em;
   background-color: whitesmoke;
   width: 100%;
+  display: block;
+}
+
+/* box de resposta */
+.resposta {
+  background-color: aliceblue;
+  padding: 0.1em 0.4em 0.4em;
+  margin: 0;
+  border-radius: 0.3em;
+  display: block;
+  align-items: center;
 }
 
 .form-control label {
-  font-size: 14px;
-  margin-bottom: 5px;
+  font-size: 0.6em;
   font-weight: 500;
   color: #1a3b5d;
-  width: 100%;
-  display: block;
+  width: 50%;
+  display: inline-block;
   padding: 0.5em;
+  margin-top: 0.8em;
 }
 
 .inputproduto {
@@ -169,38 +176,29 @@ label:hover {
 button {
   background-color: gainsboro;
   color: black;
-  display: block;
   border: 1px solid #222;
   border-radius: 5px;
   padding: 0.7em;
-  width: 20vh;
+  width: 10em;
+  margin-top: 1em;
   cursor: pointer;
 }
 
 .vantagens-geral {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.5em, 1fr));
+  grid-gap: 1em;
+  grid-auto-flow: row;
   margin: 0;
-  height: 18vh;
 }
 
-.vantagem,
-.produto,
-.percent {
+.produto {
   color: black;
-  padding: 0;
-  margin: 0;
-}
-
-.vantagem {
+  padding-left: 0.5em;
+  margin-top: 0.5em;
   font-weight: bold;
-  margin-top: 1em;
-}
-
-.resposta {
-  background-color: aliceblue;
-  padding: 0.1em 1em 0.4em;
-  height: 50%;
-  font-size: 1.3em;
-  border-radius: 0.3em;
+  font-size: 0.7em;
+  display: block;
 }
 
 #cotacao {
@@ -221,17 +219,10 @@ button {
 .lado-direito {
   float: left;
   width: 50%;
-  margin-bottom: 1.5em;
 }
 
 .produto-centro {
-  display: block;
-}
-
-.bandeiras {
-  float: right;
-  display: flex;
-  margin: 0.4em;
+  margin: 0;
   padding: 0;
 }
 
@@ -253,19 +244,14 @@ button {
   #cotacao {
     font-size: 1em;
   }
-  .vantagem,
-  .produto,
-  .percent {
-    font-size: 1em;
-  }
-  .bandeiras {
-    width: 5vh;
-  }
   .footer {
     font-size: 0.8em;
   }
   .cabecalho {
     font-size: 2em;
+  }
+  button {
+    width: 6em;
   }
 }
 
@@ -279,14 +265,6 @@ button {
   }
   #cotacao {
     font-size: 0.6em;
-  }
-  .vantagem,
-  .produto,
-  .percent {
-    font-size: 0.6em;
-  }
-  .bandeiras {
-    width: 10vh;
   }
   .footer {
     font-size: 0.4em;
@@ -308,14 +286,59 @@ button {
 .cabecalho {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   background: #fff;
-
   width: 100%;
   top: 0;
-
   text-align: center;
   font-weight: bold;
   color: #6ed0f6;
   padding: 0.6em;
-  margin-top: 0.6em;
-  margin-bottom: 1em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+.custo-paises {
+  color: darkgrey;
+  padding: 0.3em;
+  width: 7em;
+  height: 6.5em;
+  border-radius: 0.5em;
+  margin: 0.2em;
+  margin-top: 0.8em;
+  align-items: center;
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+  box-shadow: 0 0 3em rgba(0, 0, 0, 0.1);
+}
+
+.esconder-objeto {
+  display: none;
+}
+
+.round-flag {
+  max-height: 4em;
+  margin: auto;
+  padding: 0.1em;
+  display: block;
+}
+
+.flat-flag {
+  max-height: 2em;
+  margin: auto;
+  padding: 0.1em;
+  display: block;
+}
+
+.percentual-flag {
+  margin: auto;
+  padding: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  display: block;
+}
+
+.texto-box {
+  font-size: 0.5em;
+  margin: auto;
+  padding: 0.3em;
+  display: block;
 }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import EquivalenciaBrPt from "./EquivalenciaBrPt";
+import CurrencyInput from "./CurrencyInput";
 
 export default function ProporcaoRealEuro() {
   const [produto, setProduto] = useState("");
@@ -76,44 +77,53 @@ export default function ProporcaoRealEuro() {
       <form onSubmit={handleSubmit} className="form-control">
         <div className="produto-centro">
           <label htmlFor="produto">Produto</label>
-          <input type="text" name="produto" className="inputproduto" />
+          <input
+            type="text"
+            name="produto"
+            className="inputproduto"
+            placeholder="Nome do Produto"
+          />
         </div>
 
         <div className="lado-esquerdo">
           <label htmlFor="valorreal">Valor R$: </label>
-          <input
-            type="currency"
+          <CurrencyInput
+            type="text"
             name="valorreal"
             required
             className="input-esquerda"
+            placeholder="0,00"
           />
 
           <label htmlFor="valoreuro">Valor €: </label>
-          <input
-            type="currency"
+          <CurrencyInput
+            type="text"
             name="valoreuro"
             required
-            className="input-direita"
+            className="input-esquerda"
+            placeholder="0,00"
           />
         </div>
 
         <div className="lado-direito">
           <label htmlFor="minreal">Sal.Mínimo BR: </label>
-          <input
-            type="currency"
+          <CurrencyInput
+            type="text"
             name="minreal"
             value={salMinimoBR}
             onChange={handleChange}
             className="input-esquerda"
+            placeholder="0,00"
           />
 
           <label htmlFor="mineuro">Sal.Mínimo PT: </label>
-          <input
-            type="currency"
+          <CurrencyInput
+            type="text"
             name="mineuro"
             value={salMinimoPT}
             onChange={handleChange}
             className="input-direita"
+            placeholder="0,00"
           />
         </div>
 

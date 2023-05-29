@@ -1,60 +1,91 @@
+import brasilr from "../assets/brasil_round.png";
+import portugalr from "../assets/portugal_round.png";
+import brasilf from "../assets/brasil_flat.png";
+import portugalf from "../assets/portugal_flat.png";
+import { useEffect, useState } from "react";
+
 const EquivalenciaBrPt = ({ pr, vr, ve, mr, me }) => {
+  const [vant, setVant] = useState("");
+
+  let bandBrasil = brasilr;
+  let bandPortugal = portugalr;
+  let bandVantagem = "";
+
+  useEffect(() => {
+    function verificaVantagem(bVant) {
+      if (bVant === brasilr) {
+        setVant("b");
+      } else if (bVant === portugalr) {
+        setVant("p");
+      } else setVant("");
+    }
+
+    verificaVantagem(bandVantagem);
+  });
+
+  vr = vr.toString().replace(".", "").replace(",", ".");
+  mr = mr.toString().replace(".", "").replace(",", ".");
+  ve = ve.toString().replace(".", "").replace(",", ".");
+  me = me.toString().replace(".", "").replace(",", ".");
+
   const perSMBr = (Number.parseFloat(vr) / Number.parseFloat(mr)) * 100;
   const perSMPt = (Number.parseFloat(ve) / Number.parseFloat(me)) * 100;
 
-  let vantagem = "";
-  let perbr = "";
-  let perpt = "";
-  let bandBrasil =
-    "https://flagdownload.com/wp-content/uploads/Flag_of_Brazil_Flat_Round-1024x1024.png";
-  let bandPortugal =
-    "https://flagdownload.com/wp-content/uploads/Flag_of_Portugal_Flat_Round-1024x1024.png";
-  let bandVantagem = "";
-
   pr === "" ? (pr = pr) : (pr = `Produto: ${pr}`);
 
-  if (vr !== 0 && ve !== 0) {
+  if (vr > 0.0 && ve > 0.0) {
     if (perSMPt < perSMBr) {
-      vantagem = "Melhor custo benefício em PORTUGAL";
       bandVantagem = bandPortugal;
     } else if (perSMPt > perSMBr) {
-      vantagem = "Melhor custo benefício no BRASIL";
       bandVantagem = bandBrasil;
     } else {
-      vantagem = "PREÇOS EQUIVALENTES EM R$ E €";
       bandVantagem = "";
     }
-
-    perbr = `Representa ${perSMBr.toLocaleString("pt-br", {
-      style: "decimal",
-      maximumFractionDigits: 2,
-    })}% do salário mínimo brasileiro`;
-    perpt = `Representa ${perSMPt.toLocaleString("pt-br", {
-      style: "decimal",
-      maximumFractionDigits: 2,
-    })}% do salário mínimo português`;
-  } else vantagem = "";
+  }
 
   return (
-    <div className="vantagens-geral">
-      <p className="vantagem">
-        {vantagem} {<img src={bandVantagem} className="bandeiras" />}
-      </p>
-      <p className="produto">{pr}</p>
-      <p
-        className={`percent ${
-          bandVantagem === bandBrasil ? "mais-vantajoso" : "menos-vantajoso"
-        }`}
+    <div>
+      <div className="produto">{pr}</div>
+      <div
+        className={`vantagens-geral ${vant === "" ? "esconder-objeto" : ""}`}
       >
-        {perbr}
-      </p>
-      <p
-        className={`percent ${
-          bandVantagem === bandPortugal ? "mais-vantajoso" : "menos-vantajoso"
-        }`}
-      >
-        {perpt}
-      </p>
+        <div className="custo-paises">
+          <span className="texto-box">Equivalente a</span>
+          <img src={brasilf} className="flat-flag" />
+          <span
+            className={`percentual-flag ${
+              vant === "b" ? "mais-vantajoso" : "menos-vantajoso"
+            }`}
+          >
+            {perSMBr.toLocaleString("pt-br", {
+              style: "decimal",
+              maximumFractionDigits: 2,
+            }) + "%"}
+          </span>
+          <span className="texto-box">do salário mínimo</span>
+        </div>
+
+        <div className="custo-paises">
+          <span className="texto-box">Equivalente a</span>
+          <img src={portugalf} className="flat-flag" />
+          <span
+            className={`percentual-flag ${
+              vant === "p" ? "mais-vantajoso" : "menos-vantajoso"
+            }`}
+          >
+            {perSMPt.toLocaleString("pt-br", {
+              style: "decimal",
+              maximumFractionDigits: 2,
+            }) + "%"}
+          </span>
+          <span className="texto-box">do salário mínimo</span>
+        </div>
+
+        <div className="custo-paises">
+          <span className="texto-box">Melhor custo benefício</span>
+          <img src={bandVantagem} className="round-flag" />
+        </div>
+      </div>
     </div>
   );
 };
