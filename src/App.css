@@ -186,9 +186,9 @@ button {
 
 .vantagens-geral {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(6.5em, 1fr));
-  grid-gap: 1em;
-  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fill, minmax(5.5em, 1fr));
+  grid-gap: 2em;
+  grid-auto-flow: column;
   margin: 0;
 }
 
@@ -308,6 +308,16 @@ button {
   text-align: center;
   font-family: "Source Code Pro", monospace;
   box-shadow: 0 0 3em rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.custos-brasil {
+  width: 20em;
+}
+
+.custos-portugal {
+  width: 20em;
+  margin-left: 10em;
 }
 
 .esconder-objeto {
@@ -332,6 +342,15 @@ button {
   margin: auto;
   padding: 0;
   font-size: 1.2em;
+  font-weight: bold;
+  display: block;
+}
+
+.percentual-flag-texto {
+  margin: auto;
+  padding-top: 0.72em;
+  padding-bottom: 0.72em;
+  font-size: 0.6em;
   font-weight: bold;
   display: block;
 }

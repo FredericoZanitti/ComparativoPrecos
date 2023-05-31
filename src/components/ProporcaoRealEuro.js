@@ -80,6 +80,7 @@ export default function ProporcaoRealEuro() {
           <input
             type="text"
             name="produto"
+            id="produto"
             className="inputproduto"
             placeholder="Nome do Produto"
           />
@@ -90,6 +91,7 @@ export default function ProporcaoRealEuro() {
           <CurrencyInput
             type="text"
             name="valorreal"
+            id="valorreal"
             required
             className="input-esquerda"
             placeholder="0,00"
@@ -99,6 +101,7 @@ export default function ProporcaoRealEuro() {
           <CurrencyInput
             type="text"
             name="valoreuro"
+            id="valoreuro"
             required
             className="input-esquerda"
             placeholder="0,00"
@@ -110,6 +113,7 @@ export default function ProporcaoRealEuro() {
           <CurrencyInput
             type="text"
             name="minreal"
+            id="minreal"
             value={salMinimoBR}
             onChange={handleChange}
             className="input-esquerda"
@@ -120,6 +124,7 @@ export default function ProporcaoRealEuro() {
           <CurrencyInput
             type="text"
             name="mineuro"
+            id="mineuro"
             value={salMinimoPT}
             onChange={handleChange}
             className="input-direita"
