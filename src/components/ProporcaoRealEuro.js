@@ -136,7 +136,7 @@ export default function ProporcaoRealEuro() {
           Calcular
         </button>
       </form>
-      <br />
+
       <div className="resposta">
         <EquivalenciaBrPt
           pr={produto}
