@@ -55,7 +55,7 @@ label:hover {
 .formulario {
   margin: auto;
   margin-top: 0;
-  width: 80%;
+  width: 70%;
   background-color: whitesmoke;
   padding: 1em;
   border-radius: 1em;
@@ -184,23 +184,6 @@ button {
   cursor: pointer;
 }
 
-.vantagens-geral {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(5.5em, 1fr));
-  grid-gap: 2em;
-  grid-auto-flow: column;
-  margin: 0;
-}
-
-.produto {
-  color: black;
-  padding-left: 0.5em;
-  margin-top: 0.5em;
-  font-weight: bold;
-  font-size: 0.7em;
-  display: block;
-}
-
 #cotacao {
   background-color: white;
   color: gray;
@@ -274,15 +257,6 @@ button {
   }
 }
 
-.mais-vantajoso {
-  color: olivedrab;
-  font-weight: bold;
-}
-
-.menos-vantajoso {
-  color: sienna;
-}
-
 .cabecalho {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   background: #fff;
@@ -294,70 +268,4 @@ button {
   padding: 0.6em;
   margin-top: 0.4em;
   margin-bottom: 0.4em;
-}
-
-.custo-paises {
-  color: darkgrey;
-  padding: 0.3em;
-  width: 7em;
-  height: 6.5em;
-  border-radius: 0.5em;
-  margin: 0.2em;
-  margin-top: 0.8em;
-  align-items: center;
-  text-align: center;
-  font-family: "Source Code Pro", monospace;
-  box-shadow: 0 0 3em rgba(0, 0, 0, 0.1);
-  display: inline-block;
-}
-
-.custos-brasil {
-  width: 20em;
-}
-
-.custos-portugal {
-  width: 20em;
-  margin-left: 10em;
-}
-
-.esconder-objeto {
-  display: none;
-}
-
-.round-flag {
-  max-height: 4em;
-  margin: auto;
-  padding: 0.1em;
-  display: block;
-}
-
-.flat-flag {
-  max-height: 2em;
-  margin: auto;
-  padding: 0.1em;
-  display: block;
-}
-
-.percentual-flag {
-  margin: auto;
-  padding: 0;
-  font-size: 1.2em;
-  font-weight: bold;
-  display: block;
-}
-
-.percentual-flag-texto {
-  margin: auto;
-  padding-top: 0.72em;
-  padding-bottom: 0.72em;
-  font-size: 0.6em;
-  font-weight: bold;
-  display: block;
-}
-
-.texto-box {
-  font-size: 0.5em;
-  margin: auto;
-  padding: 0.3em;
-  display: block;
 }

@@ -4,6 +4,8 @@ import brasilf from "../assets/brasil_flat.png";
 import portugalf from "../assets/portugal_flat.png";
 import { useEffect, useState } from "react";
 
+import "./EquivalenciaBrPt.css";
+
 const EquivalenciaBrPt = ({ pr, vr, ve, mr, me }) => {
   const [vant, setVant] = useState("");
 
@@ -64,71 +66,73 @@ const EquivalenciaBrPt = ({ pr, vr, ve, mr, me }) => {
 
   return (
     <div>
-      <div className="produto">{pr}</div>
       <div
         className={`vantagens-geral ${vant === "" ? "esconder-objeto" : ""}`}
       >
-        <div className="custos-brasil">
-          <div className="custo-paises">
-            <span className="texto-box">Equivalente a</span>
-            <img src={brasilf} className="flat-flag" />
-            <span
-              className={`percentual-flag ${
-                vant === "b" ? "mais-vantajoso" : "menos-vantajoso"
-              }`}
-            >
-              {perSMBr.toLocaleString("pt-br", {
-                style: "decimal",
-                maximumFractionDigits: 2,
-              }) + "%"}
-            </span>
-            <span className="texto-box">do salário mínimo</span>
-          </div>
-          <div className="custo-paises">
-            <span className="texto-box">Aproximadamente</span>
-            <img src={brasilf} className="flat-flag" />
-            <span
-              className={`${
-                prazoBr === "algumas horas"
-                  ? "percentual-flag-texto"
-                  : "percentual-flag"
-              } ${vant === "b" ? "mais-vantajoso" : "menos-vantajoso"}`}
-            >
-              {prazoBr}
-            </span>
-            <span className="texto-box">de trabalho</span>
-          </div>
+        <div className="produto">{pr}</div>
+
+        <div className="custo-paises-col1">
+          <span className="texto-box">Equivalente a</span>
+          <img src={brasilf} className="flat-flag" />
+          <span
+            className={`percentual-flag ${
+              vant === "b" ? "mais-vantajoso" : "menos-vantajoso"
+            }`}
+          >
+            {perSMBr.toLocaleString("pt-br", {
+              style: "decimal",
+              maximumFractionDigits: 2,
+            }) + "%"}
+          </span>
+          <span className="texto-box">do salário mínimo</span>
         </div>
-        <div className="custos-portugal">
-          <div className="custo-paises">
-            <span className="texto-box">Equivalente a</span>
-            <img src={portugalf} className="flat-flag" />
-            <span
-              className={`percentual-flag ${
-                vant === "p" ? "mais-vantajoso" : "menos-vantajoso"
-              }`}
-            >
-              {perSMPt.toLocaleString("pt-br", {
-                style: "decimal",
-                maximumFractionDigits: 2,
-              }) + "%"}
-            </span>
-            <span className="texto-box">do salário mínimo</span>
-          </div>
-          <div className="custo-paises">
-            <span className="texto-box">Aproximadamente</span>
-            <img src={portugalf} className="flat-flag" />
-            <span
-              className={`${
-                prazoPt === "algumas horas"
-                  ? "percentual-flag-texto"
-                  : "percentual-flag"
-              } ${vant === "p" ? "mais-vantajoso" : "menos-vantajoso"}`}
-            >
-              {prazoPt}
-            </span>
-            <span className="texto-box">de trabalho</span>
-          </div>
+
+        <div className="custo-paises-col2">
+          <span className="texto-box">Aproximadamente</span>
+          <img src={brasilf} className="flat-flag" />
+          <span
+            className={`${
+              prazoBr === "algumas horas"
+                ? "percentual-flag-texto"
+                : "percentual-flag"
+            } ${vant === "b" ? "mais-vantajoso" : "menos-vantajoso"}`}
+          >
+            {prazoBr}
+          </span>
+          <span className="texto-box">de trabalho</span>
+        </div>
+
+        <div className="custo-paises-col3"></div>
+
+        <div className="custo-paises-col4">
+          <span className="texto-box">Equivalente a</span>
+          <img src={portugalf} className="flat-flag" />
+          <span
+            className={`percentual-flag ${
+              vant === "p" ? "mais-vantajoso" : "menos-vantajoso"
+            }`}
+          >
+            {perSMPt.toLocaleString("pt-br", {
+              style: "decimal",
+              maximumFractionDigits: 2,
+            }) + "%"}
+          </span>
+          <span className="texto-box">do salário mínimo</span>
+        </div>
+
+        <div className="custo-paises-col5">
+          <span className="texto-box">Aproximadamente</span>
+          <img src={portugalf} className="flat-flag" />
+          <span
+            className={`${
+              prazoPt === "algumas horas"
+                ? "percentual-flag-texto"
+                : "percentual-flag"
+            } ${vant === "p" ? "mais-vantajoso" : "menos-vantajoso"}`}
+          >
+            {prazoPt}
+          </span>
+          <span className="texto-box">de trabalho</span>
         </div>
       </div>
     </div>

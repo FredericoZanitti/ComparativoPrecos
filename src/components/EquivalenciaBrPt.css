@@ -1,0 +1,109 @@
+.vantagens-geral {
+  display: grid;
+  grid-template-columns: 2fr 2fr 0.2fr 2fr 2fr;
+  grid-template-rows: 0.5fr 2fr;
+  grid-gap: 0.2em;
+  margin: 0;
+}
+
+.custo-paises-col1,
+.custo-paises-col2,
+.custo-paises-col4,
+.custo-paises-col5 {
+  color: darkgrey;
+  padding: 0.3em;
+  width: 80%;
+  height: 6.5em;
+  border-radius: 0.5em;
+  margin: 0.2em;
+  margin-top: 0.8em;
+  display: block;
+  align-items: center;
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+  box-shadow: 0 0 3em rgba(0, 0, 0, 0.1);
+}
+
+.produto {
+  grid-column: 1 / span 5;
+  grid-row: 1;
+  display: block;
+  align-items: center;
+  text-align: center;
+
+  color: black;
+  margin-top: 0.5em;
+  font-weight: bold;
+  font-size: 0.7em;
+}
+
+.custo-paises-col1 {
+  grid-column: 1;
+  width: auto;
+}
+
+.custo-paises-col2 {
+  grid-column: 2;
+  width: auto;
+}
+
+.custo-paises-col3 {
+  grid-column: 3;
+  width: auto;
+}
+
+.custo-paises-col4 {
+  grid-column: 4;
+  width: auto;
+}
+
+.custo-paises-col5 {
+  grid-column: 5;
+  width: auto;
+}
+
+.flat-flag {
+  max-height: 2em;
+  margin: auto;
+  padding: 0.1em;
+  display: block;
+}
+
+.percentual-flag {
+  margin: auto;
+  padding: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  display: block;
+}
+
+.percentual-flag-texto {
+  margin: auto;
+  padding-top: 0.72em;
+  padding-bottom: 0.72em;
+  font-size: 0.6em;
+  font-weight: bold;
+  display: block;
+}
+
+.texto-box {
+  font-size: 0.5em;
+  margin: auto;
+  padding: 0.3em;
+  display: block;
+}
+
+.mais-vantajoso {
+  color: olivedrab;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.menos-vantajoso {
+  color: sienna;
+  font-size: 100%;
+}
+
+.esconder-objeto {
+  display: none;
+}
