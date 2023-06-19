@@ -32,6 +32,13 @@ const EquivalenciaBrPt = ({ pr, vr, ve, mr, me }) => {
   const perSMBr = (Number.parseFloat(vr) / Number.parseFloat(mr)) * 100;
   const perSMPt = (Number.parseFloat(ve) / Number.parseFloat(me)) * 100;
 
+  const qtdeCompraBr = Math.trunc(
+    Number.parseFloat(mr) / Number.parseFloat(vr)
+  );
+  const qtdeCompraPt = Math.trunc(
+    Number.parseFloat(me) / Number.parseFloat(ve)
+  );
+
   pr === "" ? (pr = pr) : (pr = `Produto: ${pr}`);
 
   if (vr > 0.0 && ve > 0.0) {
@@ -101,6 +108,16 @@ const EquivalenciaBrPt = ({ pr, vr, ve, mr, me }) => {
           </span>
           <span className="texto-box">de trabalho</span>
         </div>
+        <div
+          className={`custo-paises-qtde-compra-br ${
+            vant === "b"
+              ? "mais-vantajoso-poder-compra"
+              : "menos-vantajoso-poder-compra"
+          }`}
+        >
+          Poder de Compra: {qtdeCompraBr}{" "}
+          {qtdeCompraBr <= 1 ? "Unidade" : "Unidades"}
+        </div>
 
         <div className="custo-paises-col3"></div>
 
@@ -133,6 +150,16 @@ const EquivalenciaBrPt = ({ pr, vr, ve, mr, me }) => {
             {prazoPt}
           </span>
           <span className="texto-box">de trabalho</span>
+        </div>
+        <div
+          className={`custo-paises-qtde-compra-pt ${
+            vant === "p"
+              ? "mais-vantajoso-poder-compra"
+              : "menos-vantajoso-poder-compra"
+          }`}
+        >
+          Poder de Compra: {qtdeCompraPt}{" "}
+          {qtdeCompraPt <= 1 ? "Unidade" : "Unidades"}
         </div>
       </div>
     </div>
