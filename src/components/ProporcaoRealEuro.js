@@ -8,7 +8,7 @@ export default function ProporcaoRealEuro() {
   const [valorReal, setValorReal] = useState(0);
   const [valorEuro, setValorEuro] = useState(0);
   const [salMinimoBR, setSalMinimoBR] = useState("1320,00");
-  const [salMinimoPT, setSalMinimoPT] = useState("760,00");
+  const [salMinimoPT, setSalMinimoPT] = useState("820,00");
   const [cotacao, setCotacao] = useState(0);
 
   const buscarCotacao = async () => {
