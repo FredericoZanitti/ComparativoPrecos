@@ -8,8 +8,8 @@ https://economia.awesomeapi.com.br/last/EUR-BRL
 
 ### Prints do sistema funcionando em um computador
 
-![Responsividade - Computador](https://zanitti.com.br/imagens/outras/cp_computer_new.jpg)
+![Responsividade - Computador](https://zanitti.com.br/imagens/cp_computer_new.jpg)
 
 ### Prints do sistema funcionando em um mobile
 
-![Responsividade - Computador](https://zanitti.com.br/imagens/outras/cp_mobile_new.jpg)
+![Responsividade - Computador](https://zanitti.com.br/imagens/cp_mobile_new.jpg)
