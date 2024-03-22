@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import EquivalenciaBrPt from "./EquivalenciaBrPt";
 import CurrencyInput from "./CurrencyInput";
+import "./EquivalenciaBrPt.css";
 
 export default function ProporcaoRealEuro() {
   const [produto, setProduto] = useState("");
@@ -72,9 +73,17 @@ export default function ProporcaoRealEuro() {
     setSalMinimoPT(document.getElementsByName("mineuro")[0].value);
   }
 
+  function handleReset(event) {
+    console.log("resetou pelo botão reset");
+  }
+
   return (
     <div className="formulario">
-      <form onSubmit={handleSubmit} className="form-control">
+      <form
+        onSubmit={handleSubmit}
+        onReset={handleReset}
+        className="form-control"
+      >
         <div className="produto-centro">
           <label htmlFor="produto">Produto</label>
           <input
@@ -135,6 +144,10 @@ export default function ProporcaoRealEuro() {
         <button type="submit" name="submit">
           Calcular
         </button>
+
+        <button type="reset" name="reset">
+          Limpar
+        </button>
       </form>
 
       <div className="resposta">
@@ -147,7 +160,7 @@ export default function ProporcaoRealEuro() {
         />
       </div>
       <div className="cotacao" id="cotacao"></div>
-      <div className="footer">Copyright © 2023 Frederico Zanitti Silva</div>
+      <div className="footer">Copyright © 2024 Frederico Zanitti Silva</div>
     </div>
   );
 }

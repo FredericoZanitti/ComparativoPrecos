@@ -43,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "O site faz um comparativo de preços com base no salário mínimo entre produtos adquiridos em euros e/ou em reais. O processo mostra os o percentual necessário com base no salário mínimo e a quantidade de dias necessários para se trabalhar e adquirir o produto.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

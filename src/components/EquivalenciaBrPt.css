@@ -161,3 +161,7 @@
 .esconder-objeto {
   display: none;
 }
+
+button {
+  margin-right: 0.6em;
+}
