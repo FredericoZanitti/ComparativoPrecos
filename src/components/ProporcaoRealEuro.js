@@ -11,6 +11,7 @@ export default function ProporcaoRealEuro() {
   const [salMinimoBR, setSalMinimoBR] = useState("1320,00");
   const [salMinimoPT, setSalMinimoPT] = useState("820,00");
   const [cotacao, setCotacao] = useState(0);
+  const [exibeResposta, setExibeResposta] = useState(true);
 
   const buscarCotacao = async () => {
     await axios
@@ -61,6 +62,7 @@ export default function ProporcaoRealEuro() {
     e.preventDefault();
     buscarCotacao();
 
+    setExibeResposta(true);
     setProduto(document.getElementsByName("produto")[0].value);
     setValorReal(document.getElementsByName("valorreal")[0].value);
     setValorEuro(document.getElementsByName("valoreuro")[0].value);
@@ -74,7 +76,7 @@ export default function ProporcaoRealEuro() {
   }
 
   function handleReset(event) {
-    console.log("resetou pelo botão reset");
+    setExibeResposta(false);
   }
 
   return (
@@ -150,7 +152,7 @@ export default function ProporcaoRealEuro() {
         </button>
       </form>
 
-      <div className="resposta">
+      <div className={`resposta ${!exibeResposta ? "esconder-objeto" : ""}`}>
         <EquivalenciaBrPt
           pr={produto}
           vr={valorReal}
