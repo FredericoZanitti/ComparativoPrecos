@@ -8,8 +8,8 @@ export default function ProporcaoRealEuro() {
   const [produto, setProduto] = useState("");
   const [valorReal, setValorReal] = useState(0);
   const [valorEuro, setValorEuro] = useState(0);
-  const [salMinimoBR, setSalMinimoBR] = useState("1320,00");
-  const [salMinimoPT, setSalMinimoPT] = useState("820,00");
+  const [salMinimoBR, setSalMinimoBR] = useState("1412,00");
+  const [salMinimoPT, setSalMinimoPT] = useState("860,00");
   const [cotacao, setCotacao] = useState(0);
   const [exibeResposta, setExibeResposta] = useState(true);
 
